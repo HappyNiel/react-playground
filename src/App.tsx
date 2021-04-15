@@ -1,26 +1,26 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+import './App.css';
+import Person, {PersonInfo} from './Person/Person';
+
+const App = (): JSX.Element => {
+
+    function generateName() {
+        return "Ivo";
+    }
+
+    const personInfo: PersonInfo = {id: 378943879654, name: "Ivo"}
+    const personInfo2: PersonInfo = {id: 378943879655, name: "Danny"}
+
+    return (
+          <div className="App">
+            <h1>Hallo, {generateName()} !!!!1!</h1>
+            <Person personInfo={personInfo}>
+                <Person personInfo={personInfo2}>
+                </Person>
+            </Person>
+          </div>
+        );
 }
 
 export default App;
